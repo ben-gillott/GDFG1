@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTransform: {fileID: 369738528}
-  mapBounds: {fileID: 0}
+  mapBounds: {fileID: 668580187}
   smoothSpeed: 0.5
 --- !u!20 &519420031
 Camera:
