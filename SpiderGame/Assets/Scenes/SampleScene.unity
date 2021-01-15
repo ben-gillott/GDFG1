@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 1207978810}
   - component: {fileID: 1207978809}
   - component: {fileID: 1207978808}
+  - component: {fileID: 1207978811}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -506,19 +507,19 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2a429d10e051041068ef81d8d3f403f6, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
+  Priority: 256
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -527,7 +528,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.9971695
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -535,13 +536,58 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      time: 0.25053477
+      value: 0.99590784
+      inSlope: -0.026981961
+      outSlope: -0.026981961
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.39812335
+      outWeight: 0.81812245
+    - serializedVersion: 3
+      time: 0.41852432
+      value: 0.7690533
+      inSlope: -1.8412246
+      outSlope: -1.8412246
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.38582152
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.48027456
+      value: 0.5181418
+      inSlope: -1.959031
+      outSlope: -1.959031
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.5460978
+      outWeight: 0.27169454
+    - serializedVersion: 3
+      time: 0.6759358
+      value: 0.27017683
+      inSlope: -0.92890596
+      outSlope: -0.92890596
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.57157296
+      outWeight: 0.33504963
+    - serializedVersion: 3
+      time: 0.9260675
+      value: 0.15197939
+      inSlope: -0.2597787
+      outSlope: -0.2597787
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.9425932
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.060813904
+      inSlope: -0.8513496
+      outSlope: -0.8513496
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.7371618
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -550,8 +596,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.011543274
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -566,7 +612,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.027777778
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -656,3 +702,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1207978811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207978807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0edec03efa6a04136bb3b7cfc323f72d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startX: 0
+  startY: 5
+  trackMinX: -10
+  trackMaxX: 10
+  moveSpeed: 0.1
