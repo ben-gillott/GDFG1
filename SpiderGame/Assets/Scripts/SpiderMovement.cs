@@ -16,21 +16,22 @@ public class SpiderMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.position = new Vector3(startX, startY, this.transform.position.z);
+        //this.transform.position = new Vector3(startX, startY, this.transform.position.z);
     }
 
     void Update()
     {
-        //Move on a linear track
-        float curX = this.transform.position.x;
-        if (headingRight){
-            curX += moveSpeed;
-            if (curX > trackMaxX){headingRight = false;}
-        }else{
-            curX -= moveSpeed;
-            if (curX < trackMinX){headingRight = true;}
-        }
-    
-        this.transform.position = new Vector3(curX, this.transform.position.y, this.transform.position.z);
+        // //Move on a linear track
+        // float curX = this.transform.position.x;
+
+        // if (headingRight){
+        //     curX += moveSpeed * Time.deltaTime;
+        //     if (curX > trackMaxX){headingRight = false;}
+        // }else{
+        //     curX -= moveSpeed;
+        //     if (curX < trackMinX){headingRight = true;}
+        // }
+
+        // this.transform.position = new Vector3(curX, this.transform.position.y, this.transform.position.z);
     }
 }
