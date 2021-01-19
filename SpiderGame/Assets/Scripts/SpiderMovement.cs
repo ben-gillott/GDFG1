@@ -7,6 +7,9 @@ public class SpiderMovement : MonoBehaviour
     public float startX;
     public float startY;
 
+
+
+
     //TODO: Switch to bounding box or cinemachine track for the sine math
     public float trackMinX; 
     public float trackMaxX;
