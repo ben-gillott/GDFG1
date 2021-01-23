@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedModifier: 9.5
-  maxSpeed: 6
+  maxSpeed: 4
 --- !u!50 &369738531
 Rigidbody2D:
   serializedVersion: 4
@@ -850,8 +850,8 @@ MonoBehaviour:
   patrolMaxX: 50
   patrolStartX: 25
   patrolSpeed: 5
-  chaseSpeed: 1
-  returnSpeed: 1
+  chaseSpeed: 5
+  returnSpeed: 2
   chaseDistance: 10
   killDistance: 1
   audibleVelocity: 0.1
@@ -927,8 +927,8 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.2111671
-      value: 0.95827204
+      time: 0.17225718
+      value: 0.9783221
       inSlope: -0.42907855
       outSlope: -0.42907855
       tangentMode: 0
@@ -936,8 +936,8 @@ AudioSource:
       inWeight: 0.49648085
       outWeight: 0.30449978
     - serializedVersion: 3
-      time: 0.3476625
-      value: 0.49117547
+      time: 0.34961563
+      value: 0.49404413
       inSlope: -1.8412246
       outSlope: -1.8412246
       tangentMode: 0
@@ -945,8 +945,8 @@ AudioSource:
       inWeight: 0.38582152
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.4251293
-      value: 0.32418734
+      time: 0.4387554
+      value: 0.3442374
       inSlope: -1.959031
       outSlope: -1.959031
       tangentMode: 0
@@ -954,8 +954,8 @@ AudioSource:
       inWeight: 0.5460978
       outWeight: 0.27169454
     - serializedVersion: 3
-      time: 0.5834065
-      value: 0.14569563
+      time: 0.5911885
+      value: 0.16287702
       inSlope: -0.92890596
       outSlope: -0.92890596
       tangentMode: 0
@@ -963,8 +963,8 @@ AudioSource:
       inWeight: 0.57157296
       outWeight: 0.33504963
     - serializedVersion: 3
-      time: 0.80399716
-      value: 0.021699846
+      time: 0.7709161
+      value: 0.033143938
       inSlope: -0.2597787
       outSlope: -0.2597787
       tangentMode: 0

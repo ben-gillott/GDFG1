@@ -75,12 +75,12 @@ public class SpiderMovement : MonoBehaviour
                 nextPos = Vector2.MoveTowards(spiderPos, playerPos, step);
                 
                 // Chase -> Kill : If dist < killDist
-                if (distance < killDistance){
-                    //TODO: Trigger kill event and game over
-                }
+                
                 //Chase -> Return
-                else if (player.velocity.magnitude <= audibleVelocity){
+                if (player.velocity.magnitude <= audibleVelocity){
                     state = "Return";
+                } else if (distance < killDistance){
+                    //TODO: Trigger kill event and game over
                 }
                 break;
             case "Return":
@@ -91,7 +91,7 @@ public class SpiderMovement : MonoBehaviour
                 if (spiderPos.y >= patrolY){
                     nextPos.y = patrolY;
                     state = "Patrol";
-                } else if (distance < chaseDistance && player.velocity.magnitude >= audibleVelocity){
+                } else if (distance < chaseDistance && player.velocity.magnitude > audibleVelocity){
                     state = "Chase";
                 }
                 break;
