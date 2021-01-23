@@ -360,7 +360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369738526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: -1.57, z: -0.16144742}
+  m_LocalPosition: {x: 0, y: -1.57, z: -0.16144742}
   m_LocalScale: {x: 0.153615, y: 0.274645, z: 0.3724}
   m_Children: []
   m_Father: {fileID: 0}
@@ -635,7 +635,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668580184}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6630951, y: -6.5179157, z: 9.961177}
+  m_LocalPosition: {x: 22.94, y: -6.16, z: 9.961177}
   m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 503615522}
@@ -654,7 +654,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.015481174}
+  m_Offset: {x: -0.32293653, y: -0.015481234}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -665,7 +665,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.76, y: 3.0258904}
+  m_Size: {x: 9.007825, y: 3.0258904}
   m_EdgeRadius: 0
 --- !u!1 &1173920963
 GameObject:
@@ -968,7 +968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207978807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.57, y: 5.41, z: -10}
+  m_LocalPosition: {x: 53.6, y: 6.7, z: -10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -986,12 +986,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edec03efa6a04136bb3b7cfc323f72d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolY: 0
+  patrolY: 6
   patrolMinX: 0
-  patrolMaxX: 0
-  patrolStartX: 0
-  patrolSpeed: 0
-  chaseSpeed: 0
-  returnSpeed: 0
-  killDistance: 0
-  player: {fileID: 0}
+  patrolMaxX: 50
+  patrolStartX: 25
+  patrolSpeed: 1
+  chaseSpeed: 5
+  returnSpeed: 1
+  killDistance: 1
+  player: {fileID: 369738528}
