@@ -360,7 +360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369738526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.57, z: -0.16144742}
+  m_LocalPosition: {x: 0, y: -1.57, z: 0}
   m_LocalScale: {x: 0.153615, y: 0.274645, z: 0.3724}
   m_Children: []
   m_Father: {fileID: 0}
@@ -990,8 +990,10 @@ MonoBehaviour:
   patrolMinX: 0
   patrolMaxX: 50
   patrolStartX: 25
-  patrolSpeed: 1
-  chaseSpeed: 5
+  patrolSpeed: 5
+  chaseSpeed: 1
   returnSpeed: 1
+  chaseDistance: 10
   killDistance: 1
-  player: {fileID: 369738528}
+  audibleVelocity: 0.1
+  player: {fileID: 369738531}

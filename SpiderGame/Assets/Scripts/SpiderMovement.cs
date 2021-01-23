@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SpiderMovement : MonoBehaviour
 {
 
@@ -16,11 +17,10 @@ public class SpiderMovement : MonoBehaviour
 
     public float chaseDistance;
     public float killDistance;
+    public float audibleVelocity;
     
-    public Transform player;
+    public Rigidbody2D player;
 
-
-    private float distance = 100; //Start default
     private string state = "Patrol";
     private int patrolDirection = 1;
 
@@ -46,29 +46,35 @@ public class SpiderMovement : MonoBehaviour
 
     void Update()
     {
-        float nextX = this.transform.position.x;
-        float nextY = this.transform.position.y;
-        //distance = //TODO:
+        Vector2 spiderPos = this.transform.position;
+        Vector2 playerPos = player.position;
+        Vector2 nextPos = new Vector2(spiderPos.x, spiderPos.y);
+
+        float distance = Vector2.Distance(spiderPos, playerPos);
 
         switch(state){
             case "Patrol":
                 //Move along the patrol line
-                nextX = this.transform.position.x + patrolSpeed * patrolDirection * Time.deltaTime;
+                nextPos.x = spiderPos.x + patrolSpeed * patrolDirection * Time.deltaTime;
                 
                 //If beyond either bound switch direction
-                if (this.transform.position.x > patrolMaxX){
+                if (spiderPos.x > patrolMaxX){
                     patrolDirection = -1;
-                }else if (this.transform.position.x < patrolMinX){
+                }else if (spiderPos.x < patrolMinX){
                     patrolDirection = 1;
                 }
 
-                //Patrol -> Chase - if (distance < hearable distance) && $$playerVelocity > 0
-                //if (distance < chaseDistance){
-
-                //}
+                //Patrol -> Chase
+                if (distance < chaseDistance && player.velocity.magnitude >= audibleVelocity){
+                    state = "Chase";
+                }
                 break;
+
             case "Chase":
                 // Chase - move chaseSpeed towards player
+                // nextPos.x = spiderPos.x + patrolSpeed * patrolDirection * Time.deltaTime;
+                float step = chaseSpeed * Time.deltaTime;
+                nextPos = Vector2.MoveTowards(spiderPos, playerPos, step);
                 // Chase -> Kill : If dist < killDist
                 // Chase -> Return : if player velocity <= 0 (add slight delay?)
                 break;
@@ -81,6 +87,6 @@ public class SpiderMovement : MonoBehaviour
                 //Sth wrong
                 break;
         }
-        this.transform.position = new Vector3(nextX, nextY, this.transform.position.z);
+        this.transform.position = new Vector3(nextPos.x, nextPos.y, this.transform.position.z);
     }
 }
