@@ -69,22 +69,34 @@ public class SpiderMovement : MonoBehaviour
                     state = "Chase";
                 }
                 break;
-
             case "Chase":
                 // Chase - move chaseSpeed towards player
-                // nextPos.x = spiderPos.x + patrolSpeed * patrolDirection * Time.deltaTime;
                 float step = chaseSpeed * Time.deltaTime;
                 nextPos = Vector2.MoveTowards(spiderPos, playerPos, step);
+                
                 // Chase -> Kill : If dist < killDist
-                // Chase -> Return : if player velocity <= 0 (add slight delay?)
+                if (distance < killDistance){
+                    //TODO: Trigger kill event and game over
+                }
+                //Chase -> Return
+                else if (player.velocity.magnitude <= audibleVelocity){
+                    state = "Return";
+                }
                 break;
             case "Return":
                 // Return - move y up to nearest track point by returnSpeed
+                nextPos.y = spiderPos.y + returnSpeed * Time.deltaTime;
+
                 // Return -> Patrol : if spiderY ~= patrolY
-                // Return -> Chase : (same as Patrol -> Chase)
+                if (spiderPos.y >= patrolY){
+                    nextPos.y = patrolY;
+                    state = "Patrol";
+                } else if (distance < chaseDistance && player.velocity.magnitude >= audibleVelocity){
+                    state = "Chase";
+                }
                 break;
             default:
-                //Sth wrong
+                Debug.Log("State does not exist");
                 break;
         }
         this.transform.position = new Vector3(nextPos.x, nextPos.y, this.transform.position.z);
