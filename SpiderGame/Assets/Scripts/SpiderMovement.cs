@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class SpiderMovement : MonoBehaviour
 {
+    //Event systems
+    public delegate void KillAction();
+    public static event KillAction OnKill;
 
     public float patrolY;
     public float patrolMinX;
@@ -23,24 +26,12 @@ public class SpiderMovement : MonoBehaviour
 
     private string state = "Patrol";
     private int patrolDirection = 1;
+    private bool notDeadYet = true;
 
-    // States:
-    // Patrol - change x pos on the line by patrolSpeed
-    // Chase - move chaseSpeed towards player
-    // Return - move y up to nearest track point by returnSpeed
-    // Kill - trigger kill event (TBD) - not a full state but a result
 
-    // Transitions:
-    // Patrol -> Chase : if (distance < hearable distance) && $$playerVelocity > 0
-    // Chase -> Kill : If dist < killDist
-    // Chase -> Return : if player velocity <= 0 (add slight delay?)
-    // Return -> Patrol : if spiderY ~= patrolY
-    // Return -> Chase : (same as Patrol -> Chase)
-
-    
-    // Start is called before the first frame update
     void Start()
     {
+        notDeadYet = true;
         this.transform.position = new Vector3(patrolStartX, patrolY, this.transform.position.z);
     }
 
@@ -80,7 +71,7 @@ public class SpiderMovement : MonoBehaviour
                 if (player.velocity.magnitude <= audibleVelocity){
                     state = "Return";
                 } else if (distance < killDistance){
-                    //TODO: Trigger kill event and game over
+                    state = "Kill";
                 }
                 break;
             case "Return":
@@ -93,6 +84,15 @@ public class SpiderMovement : MonoBehaviour
                     state = "Patrol";
                 } else if (distance < chaseDistance && player.velocity.magnitude > audibleVelocity){
                     state = "Chase";
+                }
+                break;
+            case "Kill":
+                if(OnKill != null && notDeadYet){
+                    notDeadYet = false; //Read this in a british accent?
+                    OnKill();
+                } else if (!notDeadYet){
+                    //Already triggered kill event, fade away
+                    nextPos.y = spiderPos.y + returnSpeed/2 * Time.deltaTime;
                 }
                 break;
             default:
