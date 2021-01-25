@@ -8,22 +8,27 @@ public class SceneManager : MonoBehaviour
     public AudioSource audioData;
     public GameObject blackOutSquare;
 
+
+    void Start() { 
+        //Fade into the game
+        StartCoroutine(FadeBlackOutSquare(false));
+    }
+
     void OnEnable()
     {
         SpiderMovement.OnKill += KillTransition;
     }
-
 
     void OnDisable()
     {
         SpiderMovement.OnKill -= KillTransition;
     }
 
-
     void KillTransition()
     {
         audioData.Play();
         StartCoroutine(FadeBlackOutSquare());
+        //TODO: display buttons to change scenes
     }
 
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, float fadeSpeed = .5f){
