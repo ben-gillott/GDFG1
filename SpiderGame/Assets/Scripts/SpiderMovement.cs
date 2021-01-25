@@ -92,7 +92,7 @@ public class SpiderMovement : MonoBehaviour
                     OnKill();
                 } else if (!notDeadYet){
                     //Already triggered kill event, fade away
-                    nextPos.y = spiderPos.y + returnSpeed/2 * Time.deltaTime;
+                    nextPos.y = spiderPos.y + returnSpeed * Time.deltaTime;
                 }
                 break;
             default:

@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb; 
     public float speedModifier;
     public float maxSpeed;
+
     void Start() { 
         rb = GetComponent<Rigidbody2D>(); 
     }
