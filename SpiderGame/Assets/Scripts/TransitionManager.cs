@@ -9,8 +9,8 @@ public class TransitionManager : MonoBehaviour
     public GameObject blackOutSquare;
     public Button retryButton;
     public Text retryText;
-    // public GameObject retryButton;
-
+    public Button quitButton;
+    public Text quitText;
 
     void Start() { 
         Color objectColor = blackOutSquare.GetComponent<Image>().color;
@@ -34,11 +34,12 @@ public class TransitionManager : MonoBehaviour
     {
         audioData.Play();
         StartCoroutine(FadeBlackOutSquare());
-        //TODO: display buttons to change scenes
 
         retryButton.enabled = true;
         retryText.enabled = true;
-        
+
+        quitButton.enabled = true;
+        quitText.enabled = true;
     }
 
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, float fadeSpeed = .5f){
@@ -60,7 +61,5 @@ public class TransitionManager : MonoBehaviour
                 yield return null;
             }
         }
-        
-        // yield return new WaitForEndOfFrame();
     }
 }
