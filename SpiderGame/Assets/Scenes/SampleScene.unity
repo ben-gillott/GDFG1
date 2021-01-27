@@ -662,6 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05df27477b2c04c18bde2248aa7b98d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorCollider: {fileID: 1001263327}
 --- !u!1 &503615521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,7 +1212,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1459,7 +1460,7 @@ MonoBehaviour:
   patrolY: 6
   patrolMinX: 0
   patrolMaxX: 50
-  patrolStartX: 0
+  patrolStartX: 50
   patrolSpeed: 7
   chaseSpeed: 5
   returnSpeed: 1
