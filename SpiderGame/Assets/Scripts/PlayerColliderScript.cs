@@ -17,6 +17,9 @@ public class PlayerColliderScript : MonoBehaviour
         }
         else if(triggerObj.gameObject.tag == "Key"){
             //Makes the door available to use as a trigger, and thus passable
+            // triggerObj.gameObject.enabled = false;
+            Destroy(triggerObj.gameObject);
+            //TODO: play pickup sound
             doorCollider.isTrigger = true;
         }
     }
