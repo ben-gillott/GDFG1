@@ -34,6 +34,22 @@ public class SpiderMovement : MonoBehaviour
         notDeadYet = true;
         this.transform.position = new Vector3(patrolStartX, patrolY, this.transform.position.z);
     }
+    
+    void OnEnable()
+    {
+        PlayerColliderScript.OnDoorOpen += DoorOpensSpiderState;
+    }
+
+    void OnDisable()
+    {
+        PlayerColliderScript.OnDoorOpen -= DoorOpensSpiderState;
+    }
+
+    void DoorOpensSpiderState(){
+        state = "PlayerEscaped";
+    }
+
+
 
     void Update()
     {
@@ -94,6 +110,9 @@ public class SpiderMovement : MonoBehaviour
                     //Already triggered kill event, fade away
                     nextPos.y = spiderPos.y + returnSpeed * Time.deltaTime;
                 }
+                break;
+            case "PlayerEscaped":
+                nextPos.y = spiderPos.y + returnSpeed * 5 * Time.deltaTime;
                 break;
             default:
                 Debug.Log("State does not exist");

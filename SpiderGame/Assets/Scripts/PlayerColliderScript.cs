@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerColliderScript : MonoBehaviour
 {
+    public Collider2D doorCollider;
     public delegate void DoorOpen();
     public static event DoorOpen OnDoorOpen;
 
@@ -13,10 +14,10 @@ public class PlayerColliderScript : MonoBehaviour
             if(OnDoorOpen != null){
                 OnDoorOpen();
             }
-        } 
+        }
         else if(triggerObj.gameObject.tag == "Key"){
-            //TODO: Implement key bool logic
-            //Have door non trigger then enable trigger here?
+            //Makes the door available to use as a trigger, and thus passable
+            doorCollider.isTrigger = true;
         }
     }
 
