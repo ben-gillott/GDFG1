@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4c5f92eecf3067046b35d7b332be4c16
+guid: 60d97123054744387bb7e56dbd6f0431
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -21,7 +21,7 @@ TextureImporter:
       213: -4795583143867268377
     second: ProtoLowerLeg
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -41,6 +41,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -75,6 +76,8 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
