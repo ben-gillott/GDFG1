@@ -9,6 +9,31 @@ public class PlayerMovement : MonoBehaviour
     public float speedModifier;
     public float maxSpeed;
     private bool facingRight = true;
+    // private bool canMove = true;
+    public Animator animatedCharacter;
+
+    void OnEnable()
+    {
+        TransitionManager.OnPlayerStop += StopMoving;
+    }
+
+    void OnDisable()
+    {
+        TransitionManager.OnPlayerStop -= StopMoving;
+    }
+
+    void StopMoving(){
+        Debug.Log("Stopping movement");
+        // canMove = false;
+        // animatedCharacter.enabled = false;
+        // this.enabled = false;
+        
+        foreach (Transform child in this.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        // Destroy(this);
+    }
 
     void Start() { 
         rb = GetComponent<Rigidbody2D>(); 

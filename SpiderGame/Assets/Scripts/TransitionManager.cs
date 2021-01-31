@@ -12,6 +12,11 @@ public class TransitionManager : MonoBehaviour
     public Text retryText;
     public Button quitButton;
     public Text quitText;
+    public GameObject player;
+
+    public delegate void PlayerStop();
+    public static event PlayerStop OnPlayerStop;
+
 
     void Start() { 
         Color objectColor = blackOutSquare.GetComponent<Image>().color;
@@ -34,7 +39,7 @@ public class TransitionManager : MonoBehaviour
     }
 
     void DoorTransition(){
-        //TODO: Add button and fade to white here
+        OnPlayerStop();
         StartCoroutine(FadeWhiteOutSquare());
 
         retryButton.enabled = true;
@@ -48,6 +53,7 @@ public class TransitionManager : MonoBehaviour
 
     void KillTransition()
     {
+        OnPlayerStop();
         audioData.Play();
         StartCoroutine(FadeBlackOutSquare());
 

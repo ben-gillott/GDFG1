@@ -881,6 +881,7 @@ MonoBehaviour:
   retryText: {fileID: 2142166761}
   quitButton: {fileID: 1401267002}
   quitText: {fileID: 2002538368}
+  player: {fileID: 369738526}
 --- !u!4 &285005156
 Transform:
   m_ObjectHideFlags: 0
@@ -1167,6 +1168,7 @@ MonoBehaviour:
   animator: {fileID: 1891693805}
   speedModifier: 9.5
   maxSpeed: 3
+  animatedCharacter: {fileID: 1891693805}
 --- !u!50 &369738531
 Rigidbody2D:
   serializedVersion: 4
@@ -2203,7 +2205,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.018980883, y: -0.0017157793}
+  m_Offset: {x: -0.059657548, y: -0.0017157793}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2214,7 +2216,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3640504, y: 0.6082399}
+  m_Size: {x: 0.28269708, y: 0.6082399}
   m_EdgeRadius: 0
 --- !u!212 &1001263328
 SpriteRenderer:
@@ -3212,15 +3214,15 @@ RectTransform:
   m_GameObject: {fileID: 1725526182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6875503, y: 0.786874, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 503615522}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.796, y: -4.096}
-  m_SizeDelta: {x: 0.5399084, y: 0.41220844}
+  m_AnchoredPosition: {x: 60, y: -3.761}
+  m_SizeDelta: {x: 0.48780155, y: 0.30475837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1725526184
 Rigidbody2D:
@@ -3725,6 +3727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AnimatedCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 2029473671068486844, guid: 4658d6d4b3105dd46a695eb055979ded, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6906864688786163146, guid: 4658d6d4b3105dd46a695eb055979ded, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3888,6 +3894,10 @@ PrefabInstance:
     - target: {fileID: 7271521190741862559, guid: 4658d6d4b3105dd46a695eb055979ded, type: 3}
       propertyPath: m_LocalScale.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995894496428949795, guid: 4658d6d4b3105dd46a695eb055979ded, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4658d6d4b3105dd46a695eb055979ded, type: 3}
