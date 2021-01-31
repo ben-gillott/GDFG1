@@ -2697,10 +2697,10 @@ MonoBehaviour:
   patrolMinX: 0
   patrolMaxX: 60
   patrolStartX: 60
-  patrolSpeed: 4
+  patrolSpeed: 3.5
   chaseSpeed: 4
   returnSpeed: 1
-  chaseDistance: 13
+  chaseDistance: 11
   killDistance: 0.5
   audibleVelocity: 0.1
   player: {fileID: 369738531}
