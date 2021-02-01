@@ -27,6 +27,8 @@ public class SpiderMovement : MonoBehaviour
     private string state = "Patrol";
     private int patrolDirection = 1;
     private bool notDeadYet = true;
+    public float hoverTime;
+    private float hoverElapsedTime = 0;
 
 
     void Start()
@@ -85,10 +87,21 @@ public class SpiderMovement : MonoBehaviour
                 
                 //Chase -> Return
                 if (player.velocity.magnitude <= audibleVelocity){
-                    state = "Return";
+                    hoverElapsedTime = 0f;
+                    state = "Hover";
                 } else if (distance < killDistance){
                     state = "Kill";
                 }
+                break;
+            case "Hover":
+                hoverElapsedTime = hoverElapsedTime + Time.deltaTime;
+
+                if (distance < chaseDistance && player.velocity.magnitude > audibleVelocity){
+                    state = "Chase";
+                }else if (hoverElapsedTime > hoverTime){
+                    state = "Return";
+                }
+                //Hover
                 break;
             case "Return":
                 // Return - move y up to nearest track point by returnSpeed
