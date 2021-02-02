@@ -23,16 +23,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void StopMoving(){
-        Debug.Log("Stopping movement");
-        // canMove = false;
-        // animatedCharacter.enabled = false;
-        // this.enabled = false;
-        
         foreach (Transform child in this.transform)
         {
             Destroy(child.gameObject);
         }
-        // Destroy(this);
     }
 
     void Start() { 
