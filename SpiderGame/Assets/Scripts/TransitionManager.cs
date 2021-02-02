@@ -12,6 +12,8 @@ public class TransitionManager : MonoBehaviour
     public Text retryText;
     public Button quitButton;
     public Text quitText;
+    public Text winText;
+    public Text deathText;
     public GameObject player;
 
     public delegate void PlayerStop();
@@ -42,6 +44,7 @@ public class TransitionManager : MonoBehaviour
         OnPlayerStop();
         StartCoroutine(FadeWhiteOutSquare());
 
+        winText.enabled = true;
         retryButton.enabled = true;
         retryText.enabled = true;
         retryText.color = new Color(0, 0, 0);
@@ -56,6 +59,8 @@ public class TransitionManager : MonoBehaviour
         OnPlayerStop();
         audioData.Play();
         StartCoroutine(FadeBlackOutSquare());
+
+        deathText.enabled = true;
 
         retryButton.enabled = true;
         retryText.enabled = true;
